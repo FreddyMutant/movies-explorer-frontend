@@ -1,0 +1,49 @@
+.nav__anonim {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav__anonim-btn-reg {
+  color: #FFF;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.nav__anonim-btn-signin {
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 8px 20px;
+  margin: 0;
+  background-color: #3DDC84;
+  border: none;
+  border-radius: 3px;
+}
+
+.nav__anonim-li {
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__anonim {
+    gap: 14px;
+  }
+
+  .nav__anonim-btn-reg {
+    font-size: 10px;
+  }
+
+  .nav__anonim-btn-signin {
+    padding: 5px 12px;
+    font-size: 10px;
+  }
+}

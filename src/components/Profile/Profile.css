@@ -1,0 +1,188 @@
+.account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.account__container {
+  display: flex;
+  flex-direction: column;
+  padding: 74px 0 0;
+  max-width: 410px;
+  width: 100%;
+}
+
+.account__info {
+  margin: 0;
+  padding-bottom: 123px;
+  color: #FFF;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+}
+
+.account__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.account__label {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.account__input-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.account__input-container_padding-top {
+  padding-top: 17px;
+}
+
+.account__input-label {
+  color: #FFF;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+.account__input {
+  border: none;
+  margin: unset;
+  padding: unset;
+  color: #FFF;
+  text-align: right;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+  background-color: transparent;
+}
+
+.account__label_underline {
+  border-bottom: 1px solid #424242;
+}
+
+.account__input-error {
+  margin: unset;
+  padding: 4px 0 0;
+  color: #EE3465;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  min-height: 12px;
+}
+
+.account__input:invalid {
+  color:  #EE3465;
+}
+
+.account__input:focus {
+  outline: 1px solid #4285F4;
+  font-weight: 500;
+}
+
+.account__down {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: calc(220px - 16px - 14px - 20px);
+}
+
+.account__error {
+  margin: unset;
+  color: #FF004C;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+  min-height: 14px;
+  padding-bottom: 20px;
+}
+
+.account__submit {
+  border-radius: 3px;
+  background-color: #4285F4;
+  color: #FFF;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  border: none;
+  padding: 13px 0 15px;
+  width: 100%;
+}
+
+.account__submit_disabled {
+  border-radius: 3px;
+  background-color: #F8F8F8;
+  color: #C2C2C2;
+}
+
+.account__redact {
+  color: #FFF;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  border: none;
+  margin: unset;
+  padding: unset;
+  background-color: transparent;
+}
+
+.account__signout {
+  background-color: transparent;
+  margin: 16px 0 0 ;
+  padding: unset;
+  border: none;
+  color: #EE3465;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .account__container {
+    padding: 236px 0 0;
+  }
+  .account__info {
+    padding-bottom: 96px;
+  }
+  .account__down {
+    padding-top: calc(210px - 16px - 14px - 20px);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .account__container {
+    padding: 70px 0 0;
+    max-width: 260px;
+  }
+  .account__info {
+    padding-bottom: 80px;
+  }
+
+  .account__down {
+    padding-top: calc(379px - 16px - 14px - 20px);
+  }
+
+  .account__redact {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .account__signout {
+    color: #EE3465;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+  }
+}

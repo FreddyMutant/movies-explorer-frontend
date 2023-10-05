@@ -1,0 +1,151 @@
+.nav__link-profile {
+  display: block;
+  width: 100px;
+  height: 32px;
+  background-image: url("../../../images/profile-main.svg");
+  background-position: -15px -11px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 40px;
+}
+
+.nav__link-profile_location_landing {
+  background-image: url("../../../images/profile-landing.svg");
+}
+
+.nav__link-container {
+  flex-grow: 1;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding-left: 45px;
+  gap: 16px;
+}
+
+.nav__link {
+  color: #FFF;
+  text-align: right;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  text-decoration: unset;
+}
+
+.nav__link_active {
+  font-weight: 500;
+}
+
+.nav__btn-burger {
+  display: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-position: center;
+  background-image: url("../../../images/burger-btn.svg");
+  background-color: transparent;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  z-index: 2;
+}
+
+.nav__btn-burger_close {
+  background-image: url("../../../images/close-btn.svg");
+  width: 22px;
+  height: 22px;
+  top: 27px;
+  right: 27px;
+}
+
+.nav__link-top-container {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__links {
+    visibility: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    gap: 28px;
+    height: 100vh;
+    width: 0;
+    padding: 0;
+    z-index: 2;
+  }
+
+  .nav__links_active {
+    visibility: visible;
+    width: 520px;
+    transition: .2s cubic-bezier(0.22, 0.61, 0.36, 1);
+    background-color: #202020;
+  }
+
+  .nav__link-container {
+    align-items: end;
+    padding-bottom: 90px;
+  }
+
+  .nav__link-top-container {
+    display: list-item;
+    padding-top: 159px;
+  }
+
+  .nav__link {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .nav__link_active {
+    border-bottom: 2px solid #FFFFFF;
+    padding-bottom: 5px;
+  }
+
+  .nav__btn-burger {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .nav__links {
+    gap: 24px
+  }
+
+  .nav__links_active {
+    width: 100%;
+  }
+  .nav__link_active {
+    padding-bottom: 7px;
+  }
+
+  .nav__btn-burger {
+    background-image: url("../../../images/burger-mini.svg");
+    top: 15px;
+    right: 14px;
+    width: 40px;
+    height: 43px;
+  }
+
+  .nav__btn-burger_close {
+    background-image: url("../../../images/close-btn.svg");
+    top: 8px;
+    right: 9px;
+  }
+
+  .nav__link-top-container {
+    padding-top: 144px;
+  }
+  .nav__link-container {
+    padding-bottom: 46px;
+  }
+}
