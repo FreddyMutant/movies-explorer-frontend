@@ -28,7 +28,10 @@ export function NavMain({isOpen, setIsOpen}) {
         <li className="nav__link-container">
           <Link
             to="/profile"
-            className={`nav__link-profile link-opacity${location.pathname === '/' ? ' nav__link-profile_location_landing' : ''}`}/>
+            className="nav__link-profile">
+            Аккаунт
+            <div className={`nav__link-profile-image ${location.pathname === '/' ? '' : ' nav__link-profile-image_theme_main'}`}/>
+            </Link>
         </li>
       </ul>
       <button type="button" className={`nav__btn-burger button-opacity${isOpen ? ' nav__btn-burger_close' : ''}`}

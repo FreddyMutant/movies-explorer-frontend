@@ -1,0 +1,277 @@
+.student {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #202020;
+}
+
+.student__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 70px;
+  box-sizing: border-box;
+}
+
+.student__title {
+  margin: 0;
+  padding: 110px 0 23px;
+  border-bottom: 1px solid #DADADA;
+  color: #FFF;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: -0.88px;
+  align-self: start;
+  width: 100%;
+}
+
+.student__info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 66px 0 100px;
+}
+
+.student__info-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.student__subtitle {
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58px;
+  letter-spacing: -2px;
+}
+
+.student__job {
+  margin: 0;
+  padding: 18px 0 26px;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.student__description {
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.student__git {
+  flex-grow: 1;
+  display: flex;
+  align-items: end;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  text-decoration: none;
+}
+
+.student__portfolio {
+  color: #8B8B8B;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  align-self: start;
+}
+
+.student__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 50px 0 115px;
+}
+
+.student__link {
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: -1.2px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  text-decoration: none;
+}
+
+.student__link-span {
+  margin: 0;
+  padding: 0;
+  color: #FFF;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -1.2px;
+}
+
+.student__li {
+  border-bottom: 1px solid #424242;
+  padding: 20px 0 9px;
+}
+
+.student__li:first-child {
+  padding-top: 0;
+}
+
+.student__li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.student__img {
+  width: 270px;
+  height: 327px;
+}
+
+@media screen and (max-width: 768px) {
+  .student__info {
+    padding: 66px 0 90px;
+  }
+
+  .student__info-container {
+    max-width: 364px;
+  }
+  .student__description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .student__job {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    padding: 16px 0 20px;
+  }
+
+  .student__subtitle {
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -1.6px;
+  }
+
+  .student__title {
+    padding: 90px 0 23px;
+  }
+
+  .student__container {
+    padding: 0 50px;
+  }
+
+  .student__list {
+    padding-bottom: 80px;
+  }
+
+  .student__link {
+    font-size: 28px;
+    letter-spacing: -1.12px;
+  }
+
+  .student__img {
+    height: 307px;
+    width: 255px;
+  }
+  .student__li {
+    border-bottom: 1px solid #E6E6E6;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .student__info {
+    padding: 60px 0 70px;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .student__info-container {
+    max-width: 292px;
+    padding-top: 40px;
+  }
+
+  .student__img {
+    height: 352px;
+    width: 292px;
+  }
+
+  .student__title {
+    padding: 70px 0 28px;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.72px;
+  }
+
+  .student__subtitle {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -1.2px;
+  }
+
+  .student__job {
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 20px 0;
+  }
+
+  .student__description {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  .student__git {
+    flex-grow: unset;
+    padding-top: 40px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .student__container {
+    padding: 0 14px;
+  }
+
+  .student__list {
+    padding: 40px 0 70px;
+  }
+
+  .student__link {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.72px;
+  }
+
+  .student__link-span {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.72px;
+  }
+
+  .student__li {
+    padding-bottom: 19px;
+  }
+  .student__portfolio {
+    color: #A0A0A0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+}

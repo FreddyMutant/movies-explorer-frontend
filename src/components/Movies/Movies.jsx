@@ -1,7 +1,7 @@
 import "./Movies.css"
 import {Header} from "../Header/Header";
-import {SearchForm} from "./SearchForm/SearchForm";
-import {MoviesCardList} from "./MoviesCardList/MoviesCardList";
+import {SearchForm} from "../SearchForm/SearchForm";
+import {MoviesCardList} from "../MoviesCardList/MoviesCardList";
 import {Footer} from "../Footer/Footer";
 import {useEffect, useState} from "react";
 import {CARD_LIST} from "../../utils/constants";

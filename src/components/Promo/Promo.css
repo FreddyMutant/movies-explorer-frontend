@@ -1,0 +1,45 @@
+.promo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #073042;
+  background-position: center 82px;
+  background-image: url("../../images/landing-logo.svg");
+  background-repeat: no-repeat;
+}
+
+.promo__info {
+  color: #FFF;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58px;
+  letter-spacing: -2px;
+  margin: 0;
+  padding: 184px 0 224px;
+  max-width: 730px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .promo__info {
+    padding: 326px 0 342px;
+  }
+  .promo {
+    background-position: center 224px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .promo__info {
+    padding: 207px 0 246px;
+    font-size: 31px;
+    line-height: 39px;
+    letter-spacing: -1.24px;
+    max-width: 300px;
+  }
+  .promo {
+    background-position: center 142px;
+    background-size: 248px 248px;
+  }
+}
