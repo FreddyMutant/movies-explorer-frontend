@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  width: 100%;
+}
+
+.main__button {
+  margin: 50px 0 80px;
+  padding: 11px 0 9px;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  border-radius: 6px;
+  background-color: #2F2F2F;
+  width: calc(100% - 140px);
+}
+
+@media screen and (max-width: 1000px) {
+  .main__button {
+    width: calc(100% - 60px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main__button {
+    width: calc(100% - 20px);
+  }
+}

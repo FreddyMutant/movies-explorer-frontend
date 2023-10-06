@@ -1,0 +1,30 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+
+.root {
+  font-family: 'Inter', Arial, sans-serif;
+  background: #202020;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+.link-opacity:hover {
+  cursor: pointer;
+  opacity: .7;
+  transition: opacity .5s;
+}
+
+.button-opacity:hover {
+  cursor: pointer;
+  opacity: .8;
+  transition: opacity .5s;
+}
+
+.list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

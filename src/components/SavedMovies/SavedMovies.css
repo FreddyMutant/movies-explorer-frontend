@@ -1,0 +1,18 @@
+.button-space {
+  margin: 50px 0 80px;
+  padding: 27px 0 9px;
+  background-color: transparent;
+  width: calc(100% - 140px);
+}
+
+@media screen and (max-width: 1000px) {
+  .button-space {
+    width: calc(100% - 60px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .button-space {
+    width: calc(100% - 20px);
+  }
+}
