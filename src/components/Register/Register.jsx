@@ -1,16 +1,20 @@
 import "./Register.css"
 import {Logo} from "../Logo/Logo";
-import useFormAndValidation from "../../hooks/useFormAndValidation";
 import {Link} from "react-router-dom";
 import {useState} from "react";
+import useAuthFormAndValidation from "../../hooks/useAuthFormAndValidation";
+import authErrorHandler from "../../utils/AuthErrorHandler";
+import {REGISTER_MESSAGE_ERROR} from "../../utils/constants";
+import {registrationScheme} from "../../utils/validationSchemes";
 
-export function Register() {
+export function Register({onRegister}) {
   const [error, setError] = useState("");
-  const {values, handleChange, errors, isValid} = useFormAndValidation();
+  const {values, handleChange, errors, isValid, setIsValid} = useAuthFormAndValidation(registrationScheme);
 
   function handleSubmit(e) {
     e.preventDefault();
-    setError("При регистрации пользователя произошла ошибка.");
+    setIsValid(false);
+    onRegister(values.name, values.email, values.password).catch(error => setError(authErrorHandler(error.status, REGISTER_MESSAGE_ERROR)))
   }
 
   return (

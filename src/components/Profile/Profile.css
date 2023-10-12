@@ -94,16 +94,22 @@
   width: 100%;
   padding-top: calc(220px - 16px - 14px - 20px);
 }
-
-.account__error {
+.account__message {
   margin: unset;
-  color: #FF004C;
   text-align: center;
   font-size: 11px;
   font-weight: 400;
   line-height: 14px;
   min-height: 14px;
   padding-bottom: 20px;
+}
+
+.account__message_type_error {
+  color: #FF004C;
+}
+
+.account__message_type_info {
+  color: #FFF;
 }
 
 .account__submit {

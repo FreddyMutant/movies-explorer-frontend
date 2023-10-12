@@ -2,35 +2,41 @@ import {Header} from "../Header/Header";
 import {useContext, useEffect, useState} from "react";
 import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 import "./Profile.css"
-import useFormAndValidation from "../../hooks/useFormAndValidation";
-import {useNavigate} from "react-router-dom";
+import useAuthFormAndValidation from "../../hooks/useAuthFormAndValidation";
+import {mainApi} from "../../utils/MainApi";
+import authErrorHandler from "../../utils/AuthErrorHandler";
+import {PROFILE_UPDATE_ERROR, PROFILE_UPDATE_SUCCESS} from "../../utils/constants";
+import {profileScheme} from "../../utils/validationSchemes";
 
-export function Profile({setCurrentUser}) {
+export function Profile({setCurrentUser, onLogout}) {
   const user = useContext(CurrentUserContext)
-  const [error, setError] = useState("");
-  const {values, handleChange, errors, isValid, setIsValid, setValues} = useFormAndValidation();
+  const [messageData, setMessageData] = useState({severity: "", message: ""});
+  const {values, handleChange, errors, isValid, setIsValid, setValues} = useAuthFormAndValidation(profileScheme);
   const [isButtonPresent, setIsButtonPresent] = useState(false);
-  const nav = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    setError("При обновлении профиля произошла ошибка.");
     setIsValid(false);
+    mainApi.setUserData(values.name, values.email)
+      .then(({name, email}) => {
+        setCurrentUser((prev) => ({...prev, name: name, email: email}))
+        setIsButtonPresent(false);
+        setMessageData({severity: "info", message: PROFILE_UPDATE_SUCCESS});
+      })
+      .catch((error) => {
+        const message = authErrorHandler(error.status, PROFILE_UPDATE_ERROR);
+        setMessageData({severity: "error", message: message});
+      })
   }
 
   function handleEdit() {
-
     setIsButtonPresent(true);
-  }
-
-  function signout() {
-    setCurrentUser(p => ({...p, isLogIn: false}));
-    nav("/", {replace: true})
+    setMessageData({severity: "info", message: ""})
   }
 
   useEffect(() => {
     setValues({name: user.name, email: user.email});
-  }, [])
+  }, [user.email, user.name])
 
   return (
     <>
@@ -77,7 +83,8 @@ export function Profile({setCurrentUser}) {
                 <span className="account__input-error">{errors["email"]}</span>
               </div>
               <div className="account__down">
-                <p className="account__error">{error}</p>
+                <p
+                  className={`account__message ${messageData.severity === "error" ? "account__message_type_error" : "account__message_type_info"}`}>{messageData.message}</p>
                 {isButtonPresent
                   ?
                   <button
@@ -90,7 +97,7 @@ export function Profile({setCurrentUser}) {
                     <button type="button" className="account__redact button-opacity"
                             onClick={handleEdit}>Редактировать
                     </button>
-                    <button type="button" className="account__signout button-opacity" onClick={signout}>Выйти из
+                    <button type="button" className="account__signout button-opacity" onClick={onLogout}>Выйти из
                       аккаунта
                     </button>
                   </>

@@ -1,17 +1,19 @@
 import {useState} from "react";
-import useFormAndValidation from "../../hooks/useFormAndValidation";
 import {Logo} from "../Logo/Logo";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
+import useAuthFormAndValidation from "../../hooks/useAuthFormAndValidation";
+import authErrorHandler from "../../utils/AuthErrorHandler";
+import {LOGIN_MESSAGE_ERROR} from "../../utils/constants";
+import {loginScheme} from "../../utils/validationSchemes";
 
-export function Login({setCurrentUser}) {
+export function Login({onLogin}) {
   const [error, setError] = useState("");
-  const {values, handleChange, errors, isValid} = useFormAndValidation();
-  const nav = useNavigate();
+  const {values, handleChange, errors, isValid, setIsValid} = useAuthFormAndValidation(loginScheme);
 
   function handleSubmit(e) {
     e.preventDefault();
-    setCurrentUser(p => ({...p, isLogIn: true}));
-    nav("/movies");
+    setIsValid(false);
+    onLogin(values.email, values.password).catch(error => setError(authErrorHandler(error.status, LOGIN_MESSAGE_ERROR)))
   }
 
   return (
