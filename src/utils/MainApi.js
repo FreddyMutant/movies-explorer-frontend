@@ -53,11 +53,11 @@ class MainApi {
     }).then((res) => this._handlePromiseReturn(res));
   }
 
-  register(userName, email, password) {
+  register(name, email, password) {
     return fetch(`${this._serverURL}/signup`, {
       method: "POST",
       headers: this._headers,
-      body: JSON.stringify({userName, email, password})
+      body: JSON.stringify({name, email, password})
     }).then(res => this._handlePromiseReturn(res));
   }
 
