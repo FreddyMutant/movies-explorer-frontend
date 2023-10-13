@@ -32,11 +32,10 @@ export function MoviesCard({card, onLike, onDelete, onUnlike}) {
       <img className="movie-card__image" src={location.pathname === "/saved-movies" ? card.image : `${MOVIES_API_URL}${card.image.url}`}
            alt="Фильм" onClick={handleImageClick}/>
       <div
-        className={`movie-card__container${location.pathname === "/saved-movies" ? " movie-card__container_opacity" : ""}`}
-        onClick={location.pathname === "/saved-movies" ? handleDelete : null}>
+        className={`movie-card__container${location.pathname === "/saved-movies" ? " movie-card__container_opacity" : ""}`}>
         <h2 className="movie-card__info">{card.nameRU}</h2>
         {location.pathname === "/saved-movies" ?
-          <button type="button" className="movie-card__btn movie-card__btn_delete button-opacity"/>
+          <button type="button" className="movie-card__btn movie-card__btn_delete button-opacity" onClick={handleDelete}/>
           : card.saved
             ? <button type="button" className="movie-card__btn movie-card__btn_saved button-opacity" onClick={handleUnlike}/>
             : <button type="button" className="movie-card__btn button-opacity" onClick={handleLike}/>}

@@ -65,8 +65,10 @@ export function App() {
         <Routes>
           <Route path="/" element={<Main/>}/>
           <Route element={<ProtectedRoute/>}>
-            <Route path="/movies" element={<Movies/>}/>
-            <Route path="/saved-movies" element={<SavedMovies/>}/>
+            <Route path="/movies" element={<Movies sourceMovies={sourceMovies} setSourceMovies={setSourceMovies}
+                                                   savedMovies={savedMovies} setSavedMovies={setSavedMovies}/>} />
+            <Route path="/saved-movies" element={<SavedMovies sourceMovies={sourceMovies} setSourceMovies={setSourceMovies}
+                                                              savedMovies={savedMovies} setSavedMovies={setSavedMovies}/>} />
             <Route path="/profile" element={<Profile setCurrentUser={setCurrentUser} onLogout={logout}/>}/>
           </Route>
           <Route element={<AuthRoute/>}>

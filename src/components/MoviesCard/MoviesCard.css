@@ -30,10 +30,10 @@
 }
 
 .movie-card__container_opacity {
-  cursor: pointer;
   opacity: .8;
   transition: opacity .5s;
 }
+
 
 .movie-card__info {
   color: #FFF;
@@ -75,7 +75,7 @@
   background-image: unset;
 }
 
-.movie-card__container:hover .movie-card__btn_delete {
+.movie-card:hover .movie-card__btn_delete {
   background-image: url("../../images/delete.svg");
 }
 
@@ -107,7 +107,7 @@
 /*1 card*/
 @media screen and (max-width: 767px) {
   .movie-card {
-    max-width: 300px;
+    width: 300px;
     flex-basis: unset;
   }
 
@@ -133,5 +133,9 @@
 
   .movie-card__container {
     padding: 14px;
+  }
+
+  .movie-card__btn_delete {
+    background-image: url("../../images/delete.svg");
   }
 }

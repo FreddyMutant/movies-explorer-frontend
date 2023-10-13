@@ -111,6 +111,15 @@
 
 /*custom checkbox end*/
 
+.search__blank-message {
+  margin: unset;
+  padding: unset;
+  color: #EE3465;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
 
 @media screen and (max-width: 1000px) {
   .search {
