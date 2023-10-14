@@ -32,6 +32,7 @@ class MainApi {
   }
 
   getCards() {
+    this._headers["Authorization"] = `Bearer ${localStorage.getItem("jwt")}`
     return fetch(`${this._serverURL}/movies`, {
       method: "GET",
       headers: this._headers

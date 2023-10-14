@@ -105,7 +105,7 @@ export function Movies({sourceMovies, setSourceMovies, savedMovies, setSavedMovi
     setIsButtonPresent(localMovies.length > windowMode.init)
   }
 
-  async function loadMovies() {
+  async function loadMovies(searchPattern) {
     setIsLoading(true);
     try {
       const beatMovies = await moviesApi.getCards();
@@ -131,7 +131,7 @@ export function Movies({sourceMovies, setSourceMovies, savedMovies, setSavedMovi
 
   async function handleSubmit(searchPattern) {
     if (!sourceMovies.length) {
-      await loadMovies();
+      await loadMovies(searchPattern);
     } else {
       handleLocalStorage(searchPattern, sourceMovies);
     }
@@ -139,7 +139,11 @@ export function Movies({sourceMovies, setSourceMovies, savedMovies, setSavedMovi
 
   async function handleCheckbox(e, searchPattern) {
     await handleCheckboxChange(e);
-    handleLocalStorage({...searchPattern, isShort: e.target.checked}, sourceMovies);
+    if (!sourceMovies.length) {
+      await loadMovies({...searchPattern, isShort: e.target.checked});
+    } else {
+      handleLocalStorage({...searchPattern, isShort: e.target.checked}, sourceMovies);
+    }
   }
 
   return (
